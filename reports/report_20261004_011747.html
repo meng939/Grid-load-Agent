@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<title>电力负荷预测验证报告</title>
+<style>body{font-family:sans-serif;margin:2rem}table{border-collapse:collapse;margin:1rem 0}
+td,th{border:1px solid #ccc;padding:.4rem .8rem}h1{font-size:1.3rem}</style></head>
+<body>
+<h1>电力负荷预测验证报告</h1>
+<p>判定：<b>通过</b></p>
+<h2>指标对照</h2>
+<table><tr><th>来源</th><th>MAE</th><th>RMSE</th><th>MAPE(%)</th><th>说明</th></tr><tr><td>模型</td><td>3575.02</td><td>4545.22</td><td>0.63</td><td>本报告</td></tr><tr><td>基线(昨日同期)</td><td>56029.23</td><td>60123.41</td><td>9.26</td><td>对照</td></tr></table>
+<h2>异常事件（10 个）</h2>
+<table><tr><th>起</th><th>止</th><th>归因</th></tr><tr><td>2026-03-27 05:00:00</td><td>2026-03-27 05:00:00</td><td>瞬时尖峰</td></tr><tr><td>2026-03-27 21:00:00</td><td>2026-03-27 21:00:00</td><td>瞬时尖峰</td></tr><tr><td>2026-03-28 22:00:00</td><td>2026-03-28 22:00:00</td><td>瞬时尖峰</td></tr><tr><td>2026-04-20 07:00:00</td><td>2026-04-20 07:00:00</td><td>瞬时尖峰</td></tr><tr><td>2026-06-07 10:00:00</td><td>2026-06-07 10:00:00</td><td>瞬时尖峰</td></tr><tr><td>2026-06-08 15:00:00</td><td>2026-06-08 15:00:00</td><td>瞬时尖峰</td></tr><tr><td>2026-07-23 12:00:00</td><td>2026-07-23 12:00:00</td><td>瞬时尖峰</td></tr><tr><td>2026-08-01 13:00:00</td><td>2026-08-01 13:00:00</td><td>瞬时尖峰</td></tr><tr><td>2026-08-17 07:00:00</td><td>2026-08-17 07:00:00</td><td>瞬时尖峰</td></tr><tr><td>2026-09-04 01:00:00</td><td>2026-09-04 01:00:00</td><td>瞬时尖峰</td></tr></table>
+<h2>运行日志</h2>
+<ol><li>[fetch_data] loaded local cache: 5000 rows</li><li>[inject:missing] applied to df</li><li>[inject:spikes] applied to df</li><li>[clean_df(train)] missing 243/5000 (4.86%)</li><li>[clean_df(train)] fill_method=linear</li><li>[clean_df(train)] jumps detected: 0</li><li>[clean_df(raw)] missing 243/5000 (4.86%)</li><li>[clean_df(raw)] fill_method=none</li><li>[clean_df(raw)] jumps detected: 0</li><li>[build_features] features: 19 cols, 4664 rows</li><li>[train_predictor] train 3731 / total 4664, horizon=24</li><li>[train_predictor] trained LightGBM</li><li>[calibrate] normal-condition MAE=3177.26 (used as pass-line anchor)</li><li>[backtest] MAE=3575.02 RMSE=4545.22 MAPE=0.63%</li><li>[backtest] baseline MAE=56029.23 RMSE=60123.41 MAPE=9.26%</li><li>[backtest] thresholds: MAE<=3971.5706687211787 MAPE<=5.0%</li><li>[backtest] passed=True retrain=False</li><li>[detect_anomaly] detected 10 anomaly events</li></ol>
+</body></html>

@@ -1,0 +1,14 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<title>电力负荷预测验证报告</title>
+<style>body{font-family:sans-serif;margin:2rem}table{border-collapse:collapse;margin:1rem 0}
+td,th{border:1px solid #ccc;padding:.4rem .8rem}h1{font-size:1.3rem}</style></head>
+<body>
+<h1>电力负荷预测验证报告</h1>
+<p>判定：<b>未通过</b></p>
+<h2>指标对照</h2>
+<table><tr><th>来源</th><th>MAE</th><th>RMSE</th><th>MAPE(%)</th><th>说明</th></tr><tr><td>模型</td><td>2473.53</td><td>3176.47</td><td>10.00</td><td>本报告</td></tr><tr><td>基线(昨日同期)</td><td>56262.73</td><td>60354.99</td><td>9.29</td><td>对照</td></tr></table>
+<h2>异常事件（0 个）</h2>
+<table><tr><th>起</th><th>止</th><th>归因</th></tr></table>
+<h2>运行日志</h2>
+<ol><li>[fetch_data] loaded local cache: 5000 rows</li><li>[clean_df(train)] missing 0/5000 (0.00%)</li><li>[clean_df(train)] fill_method=linear</li><li>[clean_df(train)] jumps detected: 0</li><li>[clean_df(raw)] missing 0/5000 (0.00%)</li><li>[clean_df(raw)] fill_method=none</li><li>[clean_df(raw)] jumps detected: 0</li><li>[build_features] features: 19 cols, 4664 rows</li><li>[train_predictor] train 3731 / total 4664, horizon=24</li><li>[train_predictor] trained LightGBM</li><li>[calibrate] normal-condition MAE=2473.53 (used as pass-line anchor)</li><li>[backtest] MAE=2473.53 RMSE=3176.47 MAPE=0.43%</li><li>[backtest] baseline MAE=56262.73 RMSE=60354.99 MAPE=9.29%</li><li>[backtest] thresholds: MAE<=3091.912146840875 MAPE<=5.0%</li><li>[backtest] passed=True retrain=False</li><li>[inject:threshold] metrics inflated for retrain-branch demo</li><li>[detect_anomaly] detected 0 anomaly events</li></ol>
+</body></html>

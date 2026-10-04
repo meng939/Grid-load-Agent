@@ -1,0 +1,18 @@
+[fetch_data] loaded local cache: 5000 rows
+[clean_df(train)] missing 0/5000 (0.00%)
+[clean_df(train)] fill_method=linear
+[clean_df(train)] jumps detected: 0
+[clean_df(raw)] missing 0/5000 (0.00%)
+[clean_df(raw)] fill_method=none
+[clean_df(raw)] jumps detected: 0
+[build_features] features: 19 cols, 4664 rows
+[train_predictor] train 3731 / total 4664, horizon=24
+[train_predictor] trained LightGBM
+[calibrate] normal-condition MAE=2473.53 (used as pass-line anchor)
+[backtest] MAE=2473.53 RMSE=3176.47 MAPE=0.43%
+[backtest] baseline MAE=56262.73 RMSE=60354.99 MAPE=9.29%
+[backtest] thresholds: MAE<=3091.912146840875 MAPE<=5.0%
+[backtest] passed=True retrain=False
+[inject:threshold] metrics inflated for retrain-branch demo
+[detect_anomaly] detected 0 anomaly events
+[verify_report] verdict=未通过 mae=2473.53 mape=10.00%
